@@ -1,0 +1,44 @@
+spring:
+  sql:
+    init:
+      continue-on-error: false 
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  profiles:
+    include: API-KEY
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    password: 1234
+    url: jdbc:mariadb://localhost:3306/project_00
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate: 
+        batch_size: 50
+        default_batch_fetch_size: 50
+        format_sql: true
+    show-sql: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+thymeleaf:
+  check-template-location: false  
+server:
+  port: 8888    
+org:
+  hibernate:
+    dialect:
+      MariaDBDialect
+      MariaDB53Dialect    
+app:
+  apikey: NCSWK8CU9VVUECCY
+  secretapikey : BHN2WIBUSSZS6JO9Q1OSN6JKCIT983RE
+  portkey: 0453567671052033
+  portrestkey: kwyFqKiOwSOnbJuDGRTnlO8foJKJAhXhrWNXVJLaRfsPEqfYHGMyCPRSDHaVocEp0AZwr420hnvB85j8
+  cors:
+    allowedOrigins: http://localhost:3000,http://localhost:8080
+
